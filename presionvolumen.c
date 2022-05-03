@@ -13,12 +13,17 @@ Resumen:        Regresion linean por minimos cuadrados para
 #include <math.h>
 
 //Declaracion e inicializacion de variables
+//Error volumen
 #define EV 0.1
+//Error presion
 #define EP 0.2
+//Datos de volumen y presion
 float x[]={54.3,61.8,72.4,88.7,118.6,194.0};
 float y[]={61.2,49.2,37.6,28.4,19.2,10.2};
+//Iteraciones
 int n = 6;
 int i;
+float V = 100.0;
 
 //prototipar funciones
 void imprimir1(float vector[]);
@@ -28,7 +33,7 @@ float sumaMulti(float vector1[], float vector2[]);
 
 void main(){
     //Se declaran variables del problema
-    float b, errorb, m, errorm, r;
+    float b, errorb, m, errorm, r, p;
 
     imprimir1(x);
     imprimir2(y);
@@ -45,12 +50,15 @@ void main(){
 
     printf("Dependencia lineal aproximada de presion vs volumen\n");
     
-    printf("y = (%f +/- %f)x + (%f +/- %f)\n",m,errorm,b,errorb);
+    printf("y = (%.3f +/- %.3f)x + (%.3f +/- %.3f)\n",m,errorm,b,errorb);
     printf("\n");
     printf("Coeficiente de determinacion: %f\n",r*r);
     printf("\n");
 
-    
+    //Calculo de un valor particular de presion
+    p = (m*V)+b;
+    printf("Cuando el valor del volumen es V=100.0 in^3\n");
+    printf("La presion es igual a P=%.1f\n",p);
 
 }
 
