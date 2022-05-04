@@ -7,4 +7,4 @@ set xlabel "V"
 set ylabel "P"
 set grid
 set style data points
-plot (-0.321*x)+65.876
+plot (-0.321*x)+65.876, "tabla" using 1:2
