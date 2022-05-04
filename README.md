@@ -10,3 +10,6 @@ Para ello se recurre al método de mínimos cuadrados, para obtener la linealiza
 Se prototipan 4 funciones, imprimir1, imprimir2, que imprimen las primeras dos, los valores de las componentes de los vectores utilizados para ingresar los datos de presion y volumen, y las funciones suma y sumaMulti, que desarrollan la suma de las componentes y la suma del producto de las componentes de dichos vectores, necesaria para la regresión por el método de mínimos cuadrados.
 # Diagrama de flujo:
 ![Diagrama](diagrama.png)
+# Gráfica con Gnuplot:
+Se grafica con Gnuplot, la función lineal obtenida, y los puntos que representan los datos puros de la interacción de las variables presión y volumen.
+![Regresion](Regresion.jpg)
