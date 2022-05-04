@@ -11,5 +11,5 @@ Se prototipan 4 funciones, imprimir1, imprimir2, que imprimen las primeras dos, 
 # Diagrama de flujo:
 ![Diagrama](diagrama.png)
 # Gráfica con Gnuplot:
-Se grafica con Gnuplot, la función lineal obtenida, y los puntos que representan los datos puros de la interacción de las variables presión y volumen.
+Se grafica con Gnuplot, la función lineal obtenida, y los puntos que representan los datos puros de la interacción de las variables presión y volumen. Esto se logra con el compilable grafica.gp
 ![Regresion](Regresion.jpg)

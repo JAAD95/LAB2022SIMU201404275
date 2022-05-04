@@ -23,14 +23,21 @@ float y[]={61.2,49.2,37.6,28.4,19.2,10.2};
 //Iteraciones
 int n = 6;
 int i;
+//Condicin inicial de volumen
 float V = 100.0;
 
 //prototipar funciones
+//Imprimir en pantalla datos de volumen
 void imprimir1(float vector[]);
+//Imprimir en pantalla datos de presion
 void imprimir2(float vector[]);
+//Sumatoria sobre indice de entradas del vector
 float suma(float vector[]);
+//Sumatoria sobre el indice del producto de las entradas
+//de dos vectores
 float sumaMulti(float vector1[], float vector2[]);
 
+//Funcion principal
 void main(){
     //Se declaran variables del problema
     float b, errorb, m, errorm, r, p;
@@ -38,16 +45,17 @@ void main(){
     imprimir1(x);
     imprimir2(y);
     //Regresion lineal por minimos cuadrados
+    //Pendiente de la recta
     m = (n*sumaMulti(x,y)-(suma(x)*suma(y)))/(n*sumaMulti(x,x)-(suma(x)*suma(x)));
-
+    //intercepto eje del volumen
     b = (suma(y)-m*suma(x))/n;
-
+    //coeficiente de determinacion
     r = (n*sumaMulti(x,y)-(suma(x)*suma(y)))/(sqrt((n*sumaMulti(x,x)-(suma(x)*suma(x)))*(n*sumaMulti(y,y)-(suma(y)*suma(y)))));
-
+    //Incertezas
     errorm = (sqrt(n)*EV)/(sqrt(n*sumaMulti(x,x)-(suma(x)*suma(x))));
 
     errorb = EV/sqrt(n);
-
+//Impresion en terminal de los resultados
     printf("Dependencia lineal aproximada de presion vs volumen\n");
     
     printf("y = (%.3f +/- %.3f)x + (%.3f +/- %.3f)\n",m,errorm,b,errorb);
@@ -68,6 +76,7 @@ void imprimir1(float vector[]){
     printf("*****REGRESION LINEAL PRESION VS VOLUMEN*****\n");
     printf("\n");
     puts("Mediciones de volumen");
+    //Iteracion para mostrar cada componente del vector
     for (int i = 0; i < n; i++){
         printf("%f ",vector[i]);
     }
@@ -75,6 +84,7 @@ void imprimir1(float vector[]){
 }
 void imprimir2(float vector[]){
     puts("Mediciones de presion");
+    //Iteracion para mostrar cada componente del vector
     for (int i = 0; i < n; i++){
         printf("%f ",vector[i]);
     }
